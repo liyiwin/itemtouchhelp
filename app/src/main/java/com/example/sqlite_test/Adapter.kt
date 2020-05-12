@@ -1,6 +1,7 @@
 package com.example.sqlite_test
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,17 +13,16 @@ class Adapter(var ct:Context,var outerList: MutableList<Int>) : RecyclerView.Ada
     var innerList = mutableListOf<Int>()
 
 
-
     init {
 
         innerList = outerList
-
 
     }
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Adapter.ViewHolder {
+
 
         val view = LayoutInflater.from(ct).inflate(R.layout.itemview,parent,false)
 
