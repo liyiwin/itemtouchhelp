@@ -57,4 +57,35 @@ class Adapter(var ct:Context,var outerList: MutableList<Int>) : RecyclerView.Ada
         notifyDataSetChanged()
 
     }
+
+    // new
+
+    fun moveItem(fromPos:Int,toPos:Int){
+
+       // 資料做變動
+
+       val origin = innerList[fromPos]
+
+       innerList.removeAt(fromPos)
+
+       innerList.add(toPos,origin)
+
+       // 畫面上做變動
+
+       notifyItemMoved(fromPos, toPos)
+
+
+
+    }
+
+
+    // new
+
+    fun removeItem(position: Int){
+
+        innerList.removeAt(position)
+
+        notifyDataSetChanged()
+
+    }
 }
